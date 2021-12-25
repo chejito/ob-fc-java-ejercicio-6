@@ -44,9 +44,11 @@ public class PDFGenerator {
 
             document.add(new Paragraph(fullName, titleFont));
 
-            Image image = Image.getInstance(imageUrl);
-            image.scaleAbsolute(150, 150);
-            document.add(image);
+            if (imageUrl != null && !imageUrl.equals("")) {
+                Image image = Image.getInstance(imageUrl);
+                image.scaleAbsolute(150, 150);
+                document.add(image);
+            }
 
             document.add(new Paragraph("Información personal", headerFont));
             document.add(new Paragraph("País", paragraphHeaderFont));
