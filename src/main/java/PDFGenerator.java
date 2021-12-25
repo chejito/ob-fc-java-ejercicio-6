@@ -24,6 +24,8 @@ public class PDFGenerator {
         String userName = student.getUser().getUsername();
         Set<Tag> tags = student.getTags();
 
+        String fullNameUnderscores = fullName.replaceAll(" ", "_");
+
         Font titleFont = FontFactory.getFont(FontFactory.HELVETICA, 20, Font.BOLD);
         Font headerFont = FontFactory.getFont(FontFactory.HELVETICA, 15, Font.BOLD);
         Font paragraphHeaderFont = FontFactory.getFont(FontFactory.HELVETICA, 13, Font.ITALIC);
@@ -31,10 +33,10 @@ public class PDFGenerator {
 
         try {
             PdfWriter writer = PdfWriter.getInstance(document,
-                    new FileOutputStream(String.format("src/main/resources/resumes/CV_%s.pdf", fullName)));
+                    new FileOutputStream(String.format("src/main/resources/resumes/CV_%s.pdf", fullNameUnderscores)));
             document.open();
 
-            document.addTitle(String.format("CV_%s", fullName));
+            document.addTitle(String.format("CV_%s", fullNameUnderscores));
             document.addAuthor(userName);
             document.addCreator("OB-FC-PDF-Generator");
             document.addCreationDate();
