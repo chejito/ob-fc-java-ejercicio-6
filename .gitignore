@@ -134,5 +134,4 @@ buildNumber.properties
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
-/src/main/resources/resumes/CV_nombre_apellidos.pdf
-/src/main/resources/resumes/CV_Pepito Palotes Pelotero.pdf
+
